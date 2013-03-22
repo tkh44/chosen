@@ -10,15 +10,20 @@ CoffeeScript     = require 'coffee-script'
 {parser, uglify} = require 'uglify-js'
 
 javascripts = {
-  'chosen/chosen.jquery.js': [
+  # 'chosen/chosen.jquery.js': [
+  #   'coffee/lib/select-parser.coffee'
+  #   'coffee/lib/abstract-chosen.coffee'
+  #   'coffee/chosen.jquery.coffee'
+  # ]
+  # 'chosen/chosen.proto.js': [
+  #   'coffee/lib/select-parser.coffee'
+  #   'coffee/lib/abstract-chosen.coffee'
+  #   'coffee/chosen.proto.coffee'
+  # ]
+  'chosen/chosen.yui.js': [
     'coffee/lib/select-parser.coffee'
     'coffee/lib/abstract-chosen.coffee'
-    'coffee/chosen.jquery.coffee'
-  ]
-  'chosen/chosen.proto.js': [
-    'coffee/lib/select-parser.coffee'
-    'coffee/lib/abstract-chosen.coffee'
-    'coffee/chosen.proto.coffee'
+    'coffee/chosen.yui.coffee'
   ]
 }
 
