@@ -47,7 +47,7 @@
       padding-top: 5px;
     }
   </style>
-  <link rel="stylesheet" href="assets/chosen/chosen.css" />
+  <link rel="stylesheet" href="chosen/chosen.css" />
 </head>
 <body>
   <form>
@@ -1268,11 +1268,11 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
   <script src="http://yui.yahooapis.com/3.9.0/build/yui/yui-min.js"></script>
-  <script src="assets/chosen/chosen.yui.js" type="text/javascript"></script>
+  <script src="chosen/chosen.yui.js" type="text/javascript"></script>
   <script>
   YUI().use('node', 'event', "chosen", function (Y) {
       window.Y = Y; // We want to be able to use Y in the console.
-      Y.all(".chzn-select").plug(Y.Chosen);
+      Y.all("form").plug(Y.Chosen);
   });
   </script>
   </form>

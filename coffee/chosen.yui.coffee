@@ -615,7 +615,6 @@ YUI.add("chosen", (Y) ->
       # Continue on if running IE document type but in compatibility mode
       return this if ieUA is 6 or (ieUA is 7 and document.documentMode is 7)
 
-      console.log(this)
       attach_chosen_instance = (node) =>
         if not input.hasClass("chzn-done")
           #Chosen is expecting a DOM Node not a YUI Node
@@ -624,8 +623,8 @@ YUI.add("chosen", (Y) ->
           Y.mix(this, chosen_instance, true)
 
       if this.get("host").test("form")
-        this.all("select").each((input) ->
-            attach_chosen_instance input
+        this.get("host").all("select").each((input) ->
+            input.plug(Y.Chosen)
         )
       else
         input = this.get("host")

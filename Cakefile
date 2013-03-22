@@ -82,9 +82,9 @@ task 'build', 'build Chosen from source', build = (cb) ->
         write_chosen_javascript javascript.replace(/\.js$/,'.min.js'), (
           uglify.gen_code uglify.ast_squeeze uglify.ast_mangle parser.parse code
         ), ';'
-    package_npm () ->
-      package_jquery () ->
-        cb() if typeof cb is 'function'
+    # package_npm () ->
+    #   package_jquery () ->
+    #     cb() if typeof cb is 'function'
   catch e
     print_error e, file_name, file_contents
 
