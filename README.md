@@ -1,9 +1,8 @@
-# Chosen
+# Chosen for YUI3
 
 Chosen is a library for making long, unwieldy select boxes more user friendly.
 
-- jQuery support: 1.4+
-- Prototype support: 1.7+
+- YUI support: 3.7.3+
 
 For documentation, usage, and examples, see:  
 http://harvesthq.github.com/chosen
@@ -39,7 +38,7 @@ If you're interested, you can find the recipes in Cakefile.
 
 ### Chosen Credits
 
-- Built by [Harvest](http://www.getharvest.com/). Want to work on projects like this? [We’re hiring](http://www.getharvest.com/careers)!
+- Forked from [Harvest](http://www.getharvest.com/). Want to work on projects like this? [We’re hiring](http://www.getharvest.com/careers)!
 - Concept and development by [Patrick Filler](http://www.patrickfiller.com/)
 - Design and CSS by [Matthew Lettini](http://matthewlettini.com/)
 
