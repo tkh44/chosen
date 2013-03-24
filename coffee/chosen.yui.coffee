@@ -2,8 +2,7 @@
 Chosen source: generate output using 'cake build'
 Copyright (c) 2011 by Harvest
 ###
-#root = this
-#Y = YUI.add("chosen", {}, "2.0.0.0", { "requires": ["node", "base-build", "plugin", "event", "event-custom" "event-valuechange", "array-extras", "transition"] });
+
 root = this
 YUI.add("chosen", (Y) ->
   class Chosen extends AbstractChosen
@@ -45,8 +44,6 @@ YUI.add("chosen", (Y) ->
 
       container_div.set("id", container_props.id).addClass(container_classes.join ' ').setStyle("width", container_props.width).set("title", container_props.title)
 
-      
-
       @container = Y.one("#" + @container_id)
       @dropdown = @container.one("div.chzn-drop")
 
@@ -69,7 +66,7 @@ YUI.add("chosen", (Y) ->
         @selected_item = @container.one('.chzn-single')
         sf_width = dd_width - get_side_border_padding(@search_container) - get_side_border_padding(@search_field)
         @search_field.setStyles( {"width" : sf_width + "px"} )
-      #YOU ARE HERE
+
       this.results_build()
       
       this.set_tab_index()
@@ -81,8 +78,8 @@ YUI.add("chosen", (Y) ->
         mouseup: this.container_mouseup,
         mouseenter: this.mouse_enter,
         mouseleave: this.mouse_leave
-      
-      container_events = @container.on container_eventmap, null, this
+
+      @container.on container_eventmap, null, this
 
       search_results_eventmap =
         mouseup: this.search_results_mouseup,
@@ -109,7 +106,6 @@ YUI.add("chosen", (Y) ->
 
       if @is_multiple
         @search_choices.on "click", this.choices_click, this
-        # @search_choices.click (evt) => this.choices_click(evt); return
       else
         @container.on "click", (e) =>
           e.preventDefault()
@@ -314,8 +310,9 @@ YUI.add("chosen", (Y) ->
         html = '<li class="search-choice search-choice-disabled" id="' + choice_id + '"><span>' + item.html + '</span></li>'
       else
         html = '<li class="search-choice" id="' + choice_id + '"><span>' + item.html + '</span><a href="javascript:void(0)" class="search-choice-close" rel="' + item.array_index + '"></a></li>'
+
       @search_container.insert html, "before"
-      # link = $('#' + choice_id).find("a").first()
+
       link = Y.one("#" + choice_id + " a")
       link.on "click", ((evt) -> this.choice_destroy_link_click(evt)), this if link?
 
@@ -325,7 +322,7 @@ YUI.add("chosen", (Y) ->
         @pending_destroy_click = true
         this.choice_destroy evt.currentTarget
       else
-        evt.stopPropagation
+        evt.stopPropagation()
 
     choice_destroy: (link) ->
       if link? and this.result_deselect (link.getAttribute "rel")
