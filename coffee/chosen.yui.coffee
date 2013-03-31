@@ -170,7 +170,6 @@ YUI.add("chosen", (Y) ->
 
     test_active_click: (evt) ->
       if evt.target.ancestors("#" +  @container_id).size()
-      # if not Y.Lang.isUndefined(evt.currentTarget.ancestor("#" +  @container_id))
         @active_field = true
       else
         this.close_field()
