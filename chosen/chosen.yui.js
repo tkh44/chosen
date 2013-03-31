@@ -503,7 +503,7 @@ Copyright (c) 2011 by Harvest
       };
 
       Chosen.prototype.test_active_click = function(evt) {
-        if (!Y.Lang.isUndefined(evt.currentTarget.ancestor("#" + this.container_id))) {
+        if (evt.target.ancestors("#" + this.container_id).size()) {
           return this.active_field = true;
         } else {
           return this.close_field();
